@@ -1,0 +1,32 @@
+Metadata-Version: 2.4
+Name: mamavoice
+Version: 0.1.0
+Summary: Voice-based maternal health information assistant for Nigerian languages (research prototype)
+Requires-Python: >=3.10
+Requires-Dist: fastapi>=0.110
+Requires-Dist: uvicorn>=0.29
+Requires-Dist: pydantic>=2.6
+Requires-Dist: pydantic-settings>=2.2
+Requires-Dist: httpx>=0.27
+Requires-Dist: numpy
+Requires-Dist: soundfile
+Provides-Extra: ml
+Requires-Dist: torch; extra == "ml"
+Requires-Dist: transformers>=4.40; extra == "ml"
+Requires-Dist: faster-whisper>=1.0; extra == "ml"
+Requires-Dist: sentence-transformers>=3.0; extra == "ml"
+Requires-Dist: faiss-cpu; extra == "ml"
+Requires-Dist: pypdf; extra == "ml"
+Provides-Extra: train
+Requires-Dist: peft>=0.10; extra == "train"
+Requires-Dist: datasets; extra == "train"
+Requires-Dist: accelerate; extra == "train"
+Requires-Dist: sacrebleu; extra == "train"
+Requires-Dist: jiwer; extra == "train"
+Requires-Dist: mlflow; extra == "train"
+Requires-Dist: evaluate; extra == "train"
+Provides-Extra: bot
+Requires-Dist: python-telegram-bot>=21; extra == "bot"
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: ruff; extra == "dev"

@@ -1,0 +1,25 @@
+[project]
+name = "mamavoice"
+version = "0.1.0"
+description = "Voice-based maternal health information assistant for Nigerian languages (research prototype)"
+requires-python = ">=3.10"
+dependencies = [
+  "fastapi>=0.110", "uvicorn>=0.29", "pydantic>=2.6", "pydantic-settings>=2.2",
+  "httpx>=0.27", "numpy", "soundfile",
+]
+
+[project.optional-dependencies]
+ml = [
+  "torch", "transformers>=4.40", "faster-whisper>=1.0", "sentence-transformers>=3.0",
+  "faiss-cpu", "pypdf",
+]
+train = ["peft>=0.10", "datasets", "accelerate", "sacrebleu", "jiwer", "mlflow", "evaluate"]
+bot = ["python-telegram-bot>=21"]
+dev = ["pytest", "ruff"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
